@@ -1,7 +1,8 @@
 import './index.css'
-import {Layout} from "./components/templates/Layout.jsx";
+import {Layout} from "./components/molecules/Layout.jsx";
 import { Routes, Route } from 'react-router-dom'
-import {Home} from "./pages/Home.jsx";
+import {Home} from "./components/templates/Home.jsx";
+import {Error} from "./components/templates/Error.jsx";
 
 function App() {
 
@@ -9,6 +10,7 @@ function App() {
     <Layout>
       <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="*" element={<Error />} />
       </Routes>
     </Layout>
   )
