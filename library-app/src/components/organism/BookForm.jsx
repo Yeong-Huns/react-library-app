@@ -41,7 +41,7 @@ export const BookForm = ({initialData = {}, onSubmit}) => {
 			</select>
 			<input className={'w-full p-2 border border-gray-200 rounded-lg text-gray-400'} ref={dateRef} defaultValue={initialData.publishedDate || ''} placeholder="발매일" required type="date" />
 			<input className={'w-full p-2 border border-gray-200 rounded-lg text-gray-400'} ref={ratingRef} defaultValue={initialData.rating || 1} placeholder="별점 (1-5)" required type="number" min="1" max="5" />
-			<label className={'peer w-full p-2 border bg-white border-gray-200 rounded-lg flex gap-x-3'}>
+			<label className={'peer w-full p-2 border bg-white border-gray-200 rounded-lg flex gap-x-2'}>
 				<input className={'peer'} ref={availableRef} type="checkbox" defaultChecked={initialData.available || false} />
 				<p className={'peer-checked:text-blue-500 hover:text-blue-500 text-gray-400'}>판매가능여부</p>
 			</label>

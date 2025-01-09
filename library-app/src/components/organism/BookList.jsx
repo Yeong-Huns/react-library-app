@@ -44,12 +44,12 @@ const BookList = () => {
 					</div>
 					<div className={'flex flex-col items-center justify-center gap-y-2 w-1/5 p-2'}>
 						<button
-							className={`p-2 w-full bg-blue-500 rounded-lg text-white text-md text-center`+ (book.available ? '' : ' bg-opacity-35')}
+							className={`p-2 w-full font-medium bg-blue-500 rounded-lg text-white text-md text-center`+ (book.available ? '' : ' bg-opacity-35')}
 							onClick={() => toggleAvailable(book.id, book.available)}
 						>
-							{book.available ? 'Available' : 'Unavailable'}
+							{book.available ? '재고있음' : '재고없음'}
 						</button>
-						<Link className={'p-2 w-full bg-gray-400 rounded-lg text-white text-md text-center'} to={`/books/${book.id}`}>Details</Link>
+						<Link className={'p-2 w-full font-medium bg-gray-300 rounded-lg text-gray-800 text-md text-center'} to={`/books/${book.id}`}>상세보기</Link>
 					</div>
 				</article>
 			))}
