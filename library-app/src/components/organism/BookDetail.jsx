@@ -21,13 +21,13 @@ export const BookDetail = ({id}) => {
 	}, [id]);
 
 	if (!book) {
-		console.log(`book 업슴!`)
+		/*console.log(`book 업슴!`)*/
 		return <Loading/>
 	}
 
-	/*const handleEdit = () => {
+	const handleEdit = () => {
 		navigate(`/edit/${id}`);
-	}*/
+	}
 
 	const handleDelete = async () => {
 		const confirmed = window.confirm('이 도서를 삭제하시겠습니까?');
@@ -57,14 +57,14 @@ export const BookDetail = ({id}) => {
 						 {renderStars(book.rating)}
 					</span>
 					</p>
-					<p><strong>재고상태: </strong> {book.available ? '가능' : '불가능'}</p>
+					<p><strong>재고상태: </strong> {book.available ? '판매가능' : '판매불가'}</p>
 				</div>
 				<div className={'w-2/6 text-9xl'}>
 					{getBookEmoji(book.id)}
 				</div>
 			</div>
 			<div className={'flex justify-center items-center mt-8 gap-x-5'}>
-				<button onClick={() => console.log('수정이벤트 추가예정')} className={'px-4 py-2 font-bold bg-blue-500 rounded-lg text-white text-md text-center'}>
+				<button onClick={handleEdit} className={'px-4 py-2 font-bold bg-blue-500 rounded-lg text-white text-md text-center'}>
 					수정
 				</button>
 				<button onClick={handleDelete} className={'px-4 py-2 font-bold bg-red-600 rounded-lg text-white text-md text-center'}>
